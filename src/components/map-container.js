@@ -96,6 +96,8 @@ export default function MapContainerFactory(MapPopover, MapControl) {
       this.previousLayers = {
         // [layers.id]: mapboxLayerConfig
       };
+
+      this._deck = null;
     }
 
     componentWillUnmount() {
@@ -270,6 +272,7 @@ export default function MapContainerFactory(MapPopover, MapControl) {
 
     _renderLayer = (overlays, idx) => {
       const {
+        datasets,
         layers,
         layerData,
         hoverInfo,
@@ -281,7 +284,8 @@ export default function MapContainerFactory(MapPopover, MapControl) {
       const {mousePosition} = this.state;
       const layer = layers[idx];
       const data = layerData[idx];
-
+      const {gpuFilter} = datasets[layer.config.dataId] || {};
+      // console.log(datasets[layer.config.dataId])
       const layerInteraction = {
         mousePosition,
         wrapLongitude: true
@@ -302,12 +306,13 @@ export default function MapContainerFactory(MapPopover, MapControl) {
       if (typeof layer.renderLayer === 'function') {
         layerOverlay = layer.renderLayer({
           data,
+          gpuFilter,
           idx,
-          layerInteraction,
-          objectHovered,
-          mapState,
           interactionConfig,
-          layerCallbacks
+          layerCallbacks,
+          layerInteraction,
+          mapState,
+          objectHovered
         });
       }
 
@@ -355,6 +360,11 @@ export default function MapContainerFactory(MapPopover, MapControl) {
           onBeforeRender={this._onBeforeRender}
           onLayerHover={visStateActions.onLayerHover}
           onLayerClick={visStateActions.onLayerClick}
+          ref={comp => {
+            if (comp && comp.deck && !this._deck) {
+              this._deck = comp.deck;
+            }
+          }}
         />
       );
     }
