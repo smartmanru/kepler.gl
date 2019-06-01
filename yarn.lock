@@ -971,25 +971,33 @@
   version "0.7.3"
   resolved "https://registry.yarnpkg.com/@emotion/unitless/-/unitless-0.7.3.tgz#6310a047f12d21a1036fb031317219892440416f"
 
-"@loaders.gl/core@1.1.0", "@loaders.gl/core@^1.0.3":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@loaders.gl/core/-/core-1.1.0.tgz#f48e283a706cf246873c529bd18591b63f377a35"
-  integrity sha512-yAdqSTYQSryyhJYP4wq82GuMskL1jS+Cm6yQ6TYR6BqFkRhKIgWg+dQRCs5E+bPXrYEe9R/D0Wp5iU5wXM6nvA==
+"@loaders.gl/core@1.1.1", "@loaders.gl/core@^1.0.3":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@loaders.gl/core/-/core-1.1.1.tgz#4a1ccb8b1db0bb9aab41b49e6f73131ac183041c"
+  integrity sha512-n48UBuodfBuTHnnqeCE6Yb5z2edJMn1E78Y6MSR2BfyISOpiG3gzNcyGfVcWT60fkzpJUQbETbPiWBHlN2/q5w==
   dependencies:
     "@babel/runtime" "^7.3.1"
 
 "@loaders.gl/gltf@^1.0.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@loaders.gl/gltf/-/gltf-1.1.0.tgz#a26aa32588f798e21adf06854bf9ce53b95ca47b"
-  integrity sha512-O3k4rTmbfStVHu1IuyltVTKJ9SBYiiKfUbSxiIxbwuLA/syxwOM3LrBGPobCg7925XHGvSAXNOdnH/CupIvQzA==
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@loaders.gl/gltf/-/gltf-1.1.1.tgz#25c320de9fa3913bdbabd56ab4e2be70c3fae25a"
+  integrity sha512-HJ1e6LEf8AIh8fzlnA/bKShDuAWndG/GPt+Pvv5wtcKfp6Q5KJILCaUMrbYq9JuzoMG7aoLLezCxb4z3QsYqNA==
   dependencies:
-    "@loaders.gl/core" "1.1.0"
-    "@loaders.gl/images" "1.1.0"
+    "@loaders.gl/core" "1.1.1"
+    "@loaders.gl/images" "1.1.1"
+    "@loaders.gl/loader-utils" "1.1.1"
 
-"@loaders.gl/images@1.1.0", "@loaders.gl/images@^1.0.3":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@loaders.gl/images/-/images-1.1.0.tgz#f71f1fde20f2334342aea328beb7f5a3265b25b1"
-  integrity sha512-VWm4dZZjxt4ALJBDcsLZrR50OirYL3lGHXxCYvO0akg7myp4Onrem6Bb+iaxrzavYhyM9tc6sqD/Xx82AKRJ9Q==
+"@loaders.gl/images@1.1.1", "@loaders.gl/images@^1.0.3":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@loaders.gl/images/-/images-1.1.1.tgz#631e5e7f39c24a4a6371c8b0be697b02a6d9e32f"
+  integrity sha512-BVzsZWO3A/3CA6Em7/ypumtwQdxrdRqO5XEdqVq5wzNRw/Dby3y3dnpMmJ7e/mbTdM41MpYkwhyzyORSyMWzEA==
+
+"@loaders.gl/loader-utils@1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@loaders.gl/loader-utils/-/loader-utils-1.1.1.tgz#9830d5706f98ce30572f41fba4c05e5306a84ac3"
+  integrity sha512-CGQaoxHZg3v04kOXHH94aD/K2BgQYKwx6Kh2LInPUrm3rx6gsya9t0vc7g3M1SNihPkVH/jMmqBUq1MuxtAIdA==
+  dependencies:
+    "@babel/runtime" "^7.3.1"
 
 "@luma.gl/addons@7.0.3":
   version "7.0.3"

@@ -677,6 +677,66 @@ export default class LayerConfigurator extends Component {
     );
   }
 
+  _render3DLayerConfig({
+    layer,
+    visConfiguratorProps,
+    layerConfiguratorProps,
+    layerChannelConfigProps
+  }) {
+    // console.log({
+    //   layer,
+    //   visConfiguratorProps,
+    //   layerConfiguratorProps,
+    //   layerChannelConfigProps
+    // });
+    return (
+      <LayerConfigGroup label={'3D Config'} collapsible>
+        <VisConfigSlider
+          {...LAYER_VIS_CONFIGS.sizeScale}
+          {...visConfiguratorProps}
+          disabled={false}
+        />
+        <VisConfigSlider
+          {...LAYER_VIS_CONFIGS.angle}
+          {...visConfiguratorProps}
+          label="Angle X"
+          property="angleX"
+          disabled={false}
+        />
+        <VisConfigSlider
+          {...LAYER_VIS_CONFIGS.angle}
+          {...visConfiguratorProps}
+          label="Angle Y"
+          property="angleY"
+          disabled={false}
+        />
+        <VisConfigSlider
+          {...LAYER_VIS_CONFIGS.angle}
+          {...visConfiguratorProps}
+          label="Angle Z"
+          property="angleZ"
+          disabled={false}
+        />
+        <div
+          style={{height: 100, background: 'blue'}}
+          onDragOver={e => {
+            e.dataTransfer.dropEffect = 'link';
+            e.preventDefault();
+          }}
+          onDrop={e => {
+            e.preventDefault();
+            if (e.dataTransfer.files && e.dataTransfer.files.length === 1) {
+              const url = URL.createObjectURL(e.dataTransfer.files[0]);
+              visConfiguratorProps.onChange({scenegraph: url});
+            }
+          }}
+        >
+          DROP GLB FILES HERE
+        </div>
+      </LayerConfigGroup>
+    );
+  }
+
   render() {
     const {
       layer,
