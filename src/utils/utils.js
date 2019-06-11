@@ -50,14 +50,6 @@ export function isPlainObject(obj) {
   );
 }
 
-/**
- * whether null or undefined
- * @returns {boolean} - yes or no
- */
-export function notNullorUndefined(d) {
-  return d !== undefined && d !== null;
-}
-
 export function capitalizeFirstLetter(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
